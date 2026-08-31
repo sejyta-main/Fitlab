@@ -3,26 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1B2430">
+<meta name="theme-color" content="#101828">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="FitLab">
 <title>FitLab</title>
-<link rel="manifest" href='data:application/manifest+json,{"name":"FitLab","short_name":"FitLab","start_url":".","display":"standalone","background_color":"%23EEF1F4","theme_color":"%231B2430","icons":[{"src":"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%231B2430%27/%3E%3Crect x=%2718%27 y=%2744%27 width=%2764%27 height=%2712%27 rx=%276%27 fill=%27%23EEF1F4%27/%3E%3Crect x=%2712%27 y=%2734%27 width=%2712%27 height=%2732%27 rx=%274%27 fill=%27%232352E8%27/%3E%3Crect x=%2776%27 y=%2734%27 width=%2712%27 height=%2732%27 rx=%274%27 fill=%27%232352E8%27/%3E%3C/svg%3E","sizes":"any","type":"image/svg+xml"}]}'>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231B2430'/%3E%3Crect x='18' y='44' width='64' height='12' rx='6' fill='%23EEF1F4'/%3E%3Crect x='12' y='34' width='12' height='32' rx='4' fill='%232352E8'/%3E%3Crect x='76' y='34' width='12' height='32' rx='4' fill='%232352E8'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EEF1F4; --paper:#FFFFFF; --ink:#1B2430; --ink2:#4A5566; --ink3:#8A94A3; --line:#D6DCE4;
-  --blue:#2352E8; --blue-soft:#DCE4FC; --orange:#F26B1D; --orange-soft:#FDE4D6;
-  --green:#1E9E63; --green-soft:#D9F3E6; --amber:#D99A00; --amber-soft:#FBEFC9; --red:#D63C3C; --red-soft:#F9DADA;
+  --bg:#F3F0E9; --paper:#FFFFFF; --ink:#101828; --ink2:#454E5E; --ink3:#8A8F99; --line:#DDD8CC;
+  --blue:#8A6A1F; --blue-soft:#F1E8CF; --orange:#9C5A2B; --orange-soft:#F4E2D3;
+  --green:#2E7D5B; --green-soft:#DDEFE5; --amber:#B0841C; --amber-soft:#F6EBCC; --red:#B33A3A; --red-soft:#F5DCDC;
+  --gold:#C9A652;
   --r:14px; --rs:8px; --tap:48px;
-  --display:"Barlow Semi Condensed","Avenir Next Condensed","Roboto Condensed","Arial Narrow",system-ui,sans-serif;
-  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Lora","Georgia","Times New Roman",serif;
+  --body:"Poppins","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#141A22;--paper:#1B2430;--ink:#EEF1F4;--ink2:#B7C0CC;--ink3:#7C8794;--line:#2C3743;
-    --blue:#5B82F5;--blue-soft:#23324F;--orange:#F5823E;--orange-soft:#4A2E1E;--green:#3CBF82;--green-soft:#1B3A2C;
-    --amber:#E6B03A;--amber-soft:#3E3416;--red:#E96060;--red-soft:#432121;}
+  :root{--bg:#0F1626;--paper:#171F33;--ink:#F1ECE0;--ink2:#C2BDB0;--ink3:#7F8697;--line:#2A3348;
+    --blue:#D4B15A;--blue-soft:#2B2A24;--orange:#E39B63;--orange-soft:#3A2A1E;--green:#4FBF8B;--green-soft:#1B3A2C;
+    --amber:#E0B84A;--amber-soft:#3E3416;--red:#E96060;--red-soft:#432121;--gold:#D4B15A;}
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
@@ -44,7 +47,7 @@ main{max-width:640px;margin:0 auto;padding:14px 16px 24px}
 .muted{color:var(--ink3)}.sub{color:var(--ink2)}
 .small{font-size:13px}
 .btn{background:var(--ink);color:var(--bg);font-family:var(--display);font-size:18px;font-weight:600;width:100%;min-height:56px}
-.btn.blue{background:var(--blue);color:#fff}.btn.orange{background:var(--orange);color:#fff}
+.btn.blue{background:var(--ink);color:var(--gold)}.btn.orange{background:var(--gold);color:#101828}
 .btn.ghost{background:none;border:1.5px solid var(--line);color:var(--ink)}
 .btn.sm{min-height:var(--tap);font-size:16px;width:auto;white-space:nowrap}
 .btn:disabled{opacity:.45}
@@ -59,7 +62,7 @@ nav.tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1
 .week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:8px 0 14px}
 .week div{text-align:center;padding:8px 0 6px;border-radius:10px;background:var(--paper);font-size:12px;color:var(--ink3)}
 .week div b{display:block;font-family:var(--display);font-size:18px;color:var(--ink);font-weight:600}
-.week div.today{outline:2px solid var(--blue)}
+.week div.today{outline:2px solid var(--gold)}
 .week div.done{background:var(--green-soft)}.week div.done b{color:var(--green)}
 .week div.planned{background:var(--blue-soft)}
 /* lists */
@@ -78,7 +81,7 @@ nav.tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1
 .flip .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:14px;padding:16px;text-align:center}
 .cues{counter-reset:c;list-style:none;padding:0;margin:12px 0}
 .cues li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);font-size:17px}
-.cues li::before{counter-increment:c;content:counter(c);font-family:var(--display);font-weight:600;font-size:22px;color:var(--blue);min-width:22px;line-height:1}
+.cues li::before{counter-increment:c;content:counter(c);font-family:var(--display);font-weight:600;font-size:22px;color:var(--gold);min-width:22px;line-height:1}
 .watch{background:var(--orange-soft);border-left:4px solid var(--orange);border-radius:var(--rs);padding:10px 12px;margin:8px 0}
 details{border-top:1px solid var(--line);padding:10px 0}
 details summary{font-family:var(--display);font-size:18px;font-weight:600;cursor:pointer;min-height:36px;display:flex;align-items:center}
@@ -86,7 +89,7 @@ details ul{margin:6px 0 0;padding-left:18px}
 details li{margin:4px 0}
 .muscle svg{width:100%;height:auto}
 .muscle .m{fill:var(--line);stroke:var(--paper);stroke-width:1}
-.muscle .p{fill:var(--blue)}.muscle .s{fill:var(--blue);opacity:.4}
+.muscle .p{fill:var(--gold)}.muscle .s{fill:var(--blue);opacity:.4}
 /* gym mode */
 .gym{position:fixed;inset:0;background:var(--bg);z-index:30;display:flex;flex-direction:column;overflow:hidden}
 .gym .head{padding:calc(10px + env(safe-area-inset-top)) 16px 8px;display:flex;align-items:center;gap:10px}
@@ -633,6 +636,9 @@ function verdict(){
  return {cls:'a',title:'Holding steady',text:`Most lifts are flat over ${recent.length} sessions. Check that you are pushing to RIR 1–2 and hitting the top of the rep range before adding load.`};
 }
 
+/* Brand mark, inline SVG so it works offline */
+const GOLD_DEF='<defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8912E"/><stop offset=".5" stop-color="#F1E3A6"/><stop offset="1" stop-color="#C8A046"/></linearGradient></defs>';
+function brand(size,withName){return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" aria-hidden="true" style="flex:none;display:block">${GOLD_DEF}<rect width="100" height="100" rx="22" fill="#101828"/><rect x="11" y="11" width="78" height="78" rx="15" fill="none" stroke="url(#gg)" stroke-width=".7"/><text x="50" y="${withName?52:57}" text-anchor="middle" font-family="Lora,Georgia,serif" font-weight="600" font-size="${withName?38:44}" letter-spacing="-1" fill="url(#gg)">FL</text>${withName?'<text x="50" y="76" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-weight="400" font-size="10" letter-spacing="1.2" fill="url(#gg)">FitLab</text>':''}</svg>`;}
 /* ===================== ROUTER ===================== */
 const TABS=[['today','Today','<path d="M4 10h16M4 6h16M4 14h10"/>'],['library','Library','<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'],['plan','Plan','<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/>'],['progress','Progress','<path d="M4 19 10 12l4 4 6-8"/>'],['settings','Settings','<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>']];
 let route={v:'today'};
@@ -652,7 +658,7 @@ function vToday(){
  const thisWeek=S.sessions.filter(s=>wk.some(x=>dkey(x)===s.date)).length;
  const trainDays=p.days.filter(x=>!x.rest).length;
  const list=d.slots.map(s=>{const e=EXI[s.ex];return `<button class="item" onclick="go('exercise',{id:'${e.id}'})"><img class="thumb" src="${exImg(e,0)||''}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="grow"><div class="t">${esc(e.name)}</div><div class="d">${s.sets} × ${esc(s.reps)}${s.note?' · '+esc(s.note):''}</div></div></button>`}).join('');
- return `<div class="top"><h1>Today</h1><small>${thisWeek}/${trainDays} sessions this week</small></div>
+ return `<div class="top"><div class="row" style="gap:10px">${brand(40,false)}<div><div class="small muted" style="line-height:1">FitLab</div><h1>Today</h1></div></div><small>${thisWeek}/${trainDays} sessions this week</small></div>
  <div class="week">${strip}</div>
  <div class="card"><div class="row between"><div><span class="pill ${d.rest?'n':''}">Day ${idx+1} of ${p.days.length}</span><h2 style="margin-top:6px">${esc(d.name)}</h2><p class="sub">${esc(d.focus||'')}</p></div></div>
  ${d.rest?`<p class="sub">${d.slots.length?'Light movement today.':'Full rest. Sleep, eat to target, walk if you like.'}</p>`:`<p class="sub">${d.slots.length} exercises · about ${Math.round(d.slots.reduce((a,s)=>a+s.sets*((EXI[s.ex]?.cls==='cardio')?15:1.5),0))} min</p>`}
@@ -774,7 +780,8 @@ function vSettings(){
  <div class="card"><h3>Backup</h3><div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn ghost sm" onclick="exportJSON()">Export everything (JSON)</button><button class="btn ghost sm" onclick="exportCSV()">Export sessions (CSV)</button></div>
  <p class="small muted" style="margin-top:8px">Restore from a JSON backup:</p><input type="file" accept=".json,application/json" onchange="importJSON(this.files[0])">
  <p class="small muted" style="margin-top:10px">Export training-day flags for FuelLog: <button class="btn ghost sm" onclick="exportFlags()">Copy this week</button></p></div>
- <div class="card"><h3>About</h3><p class="small sub">FitLab keeps everything on this device. Exercise images by free-exercise-db (public domain), loaded when online. Rest-timer notifications need permission: <button class="btn ghost sm" onclick="Notification?.requestPermission().then(p=>toast(p))">Allow</button></p>
+ <div class="card"><h3>Install on your phone</h3>${matchMedia('(display-mode: standalone)').matches?'<p class="sub">Installed. You are running FitLab as an app.</p>':installEvt?'<button class="btn blue" onclick="installApp()">Add to home screen</button>':'<p class="sub"><b>iPhone:</b> tap Share, then "Add to Home Screen".<br><b>Android:</b> tap the browser menu (⋮), then "Add to Home screen" or "Install app".</p>'}</div>
+ <div class="card"><div class="row" style="gap:14px;margin-bottom:10px">${brand(72,true)}<div><h3>FitLab</h3><p class="small muted" style="margin:0">Exercise coach, plan builder and workout log. Sister app to FuelLog.</p></div></div><p class="small sub">FitLab keeps everything on this device. Exercise images by free-exercise-db (public domain), loaded when online. Rest-timer notifications need permission: <button class="btn ghost sm" onclick="Notification?.requestPermission().then(p=>toast(p))">Allow</button></p>
  <button class="btn ghost sm" style="color:var(--red)" onclick="if(confirm('Delete all FitLab data on this device?')){localStorage.removeItem(KEY);location.reload()}">Reset app</button></div>`;
 }
 function importBody(f){if(!f)return;f.text().then(t=>{const rows=t.split(/\r?\n/).filter(Boolean).map(r=>r.split(/[,;\t]/));const h=rows[0].map(x=>x.toLowerCase().trim());const di=h.findIndex(x=>/date|fecha|day/.test(x)),wi=h.findIndex(x=>/weight|peso|kg/.test(x)),bi=h.findIndex(x=>/fat|grasa|bf/.test(x));
@@ -837,6 +844,9 @@ function startT(sec){stopT();T={end:Date.now()+sec*1000,left:sec};tick();T.iv=se
 function tick(){if(!T)return;const l=Math.max(0,Math.ceil((T.end-Date.now())/1000));if(l!==T.left){T.left=l;const el=$('#tm');if(el)el.textContent=fmtT(l);if(l===0){if(navigator.vibrate)navigator.vibrate([200,100,200]);stopT();toast('Rest over');}}}
 function stopT(){if(T){clearInterval(T.iv);clearTimeout(T.nt);T=null;const el=$('#tm');if(el&&G){el.textContent='Rest '+REST[EXI[G.entries[G.i].ex].cls]+' s';el.classList.remove('go');}}}
 
+/* Install prompt (Android/desktop); iOS uses Share > Add to Home Screen */
+let installEvt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e;if(route.v==='settings')render();});
+function installApp(){if(installEvt){installEvt.prompt();installEvt.userChoice.then(()=>{installEvt=null;render();});}}
 /* ===================== BOOT ===================== */
 window.addEventListener('popstate',()=>{if(route.v==='exercise'||route.v==='builder'){route={v:route.v==='builder'?'plan':'library'};render();}});
 const _go=go;go=function(v,a){if(v==='exercise'||v==='builder')history.pushState({v},'');_go(v,a);};

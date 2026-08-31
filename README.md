@@ -3,7 +3,7 @@
 Single-file exercise coach and workout logger. Sister app to FuelLog.
 
 ## Deploy (GitHub Pages, same as FuelLog)
-1. Create a repo (e.g. `fitlab`), add `index.html` and `sw.js` to the root.
+1. Create a repo (e.g. `fitlab`), add `index.html`, `sw.js`, `manifest.json` and the four icon PNGs to the root.
 2. Settings → Pages → Deploy from branch `main` / root.
 3. Open the Pages URL on your phone → Share → Add to Home Screen.
 
